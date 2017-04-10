@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ActivityTest</string>
+    <string name="button_text1">Button 1</string>
+    <string name="button_text2">Button 2</string>
+    <string name="button_text3">Button 3</string>
+    <string name="app_label">This is FirstActivity</string>
+</resources>
