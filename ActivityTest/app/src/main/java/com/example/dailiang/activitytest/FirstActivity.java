@@ -33,6 +33,13 @@ public class FirstActivity extends AppCompatActivity {
         return true;
     }
 
+    // 观察 singleTask 模式
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("FirstActivity", "onRestart");
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode){
@@ -49,23 +56,52 @@ public class FirstActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 打印任务信息
+        Log.d("FirstActivity", "Task id is " + getTaskId());
+
+        // 打印实例信息
+        // Log.d("FirstActivity", this.toString());
+
         setContentView(R.layout.first_layout);
         Button button1 = (Button) findViewById(R.id.button_1);
 
+        // 测试 singleTop 模式
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 测试 standard 模式
+        /*
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, FirstActivity.class);
+                startActivity(intent);
+            }
+        });
+        */
+
         // 使用显示 Intent 从下一个活动返回数据
+        /*
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 
-                /**
-                 * startActivityForResult() 期望在活动销毁的时候能够返回一个结果给上一个活动
-                 * @Intent 第一个参数，是一个 Intent
-                 * @requestCode 第二个参数，请求码。用于在之后的回调中判断数据的来源
-                 */
+
+                 // startActivityForResult() 期望在活动销毁的时候能够返回一个结果给上一个活动
+                 // @Intent 第一个参数，是一个 Intent
+                 // @requestCode 第二个参数，请求码。用于在之后的回调中判断数据的来源
                 startActivityForResult(intent, 1);
             }
         });
+        */
+
         // 使用隐式 Intent 来调用拨号界面
         /*
         button1.setOnClickListener(new View.OnClickListener() {
