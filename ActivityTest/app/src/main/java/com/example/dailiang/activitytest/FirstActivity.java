@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -66,7 +66,15 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.first_layout);
         Button button1 = (Button) findViewById(R.id.button_1);
 
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SecondActivity.actionStart(FirstActivity.this, "data1", "data2");
+            }
+        });
+
         // 测试 singleTop 模式
+        /*
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +82,7 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
 
         // 测试 standard 模式
         /*
