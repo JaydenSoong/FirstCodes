@@ -1,5 +1,6 @@
 package com.example.dailiang.uiwidgettest;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.preference.DialogPreference;
 import android.support.v7.app.AlertDialog;
@@ -73,6 +74,17 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 builder.show();
+
+                /*
+                 * ProgressDialog 学习
+                 */
+                // 创建实例
+                ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
+                // 设置属性
+                progressDialog.setTitle("This is ProgressDialog");
+                progressDialog.setMessage("Loading...");
+                progressDialog.setCancelable(true);
+                progressDialog.show();
             }
         });
 
