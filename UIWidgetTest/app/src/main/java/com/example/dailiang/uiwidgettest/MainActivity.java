@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
     //  声明变量 imageView
     private ImageView imageView;
+    // 声明变量 progressBar
+    private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,19 @@ public class MainActivity extends AppCompatActivity {
 
                 // 更换 ImageView 里的图片
                 imageView.setImageResource(R.drawable.wm);
+
+                // 更改进度条的可见性
+                /*
+                if(progressBar.getVisibility() == View.GONE){
+                    progressBar.setVisibility(View.VISIBLE);
+                } else {
+                    progressBar.setVisibility(View.GONE);
+                }*/
+
+                // 更改进度条进度
+                int progress = progressBar.getProgress();
+                progress += 10;
+                progressBar.setProgress(progress);
             }
         });
 
@@ -50,5 +66,12 @@ public class MainActivity extends AppCompatActivity {
         // 1. 声明变量 imageView, 在 onCreate() 前面
         // 2. 为 imageView 赋值
         imageView = (ImageView) findViewById(R.id.image_view);
+
+        /*
+         * ProgressBar 学习
+         */
+        // 1. 声明变量 progressBar, 在 onCreate() 前面
+        // 2. 为 progressBar 赋值
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
     }
 }
