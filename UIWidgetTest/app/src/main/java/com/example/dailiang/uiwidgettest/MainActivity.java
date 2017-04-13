@@ -1,5 +1,8 @@
 package com.example.dailiang.uiwidgettest;
 
+import android.content.DialogInterface;
+import android.preference.DialogPreference;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +53,26 @@ public class MainActivity extends AppCompatActivity {
                 int progress = progressBar.getProgress();
                 progress += 10;
                 progressBar.setProgress(progress);
+
+                /*
+                 * AlertDialog 学习
+                 */
+                // 创建实例
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                // 设置属性
+                builder.setTitle("This is Dialog");
+                builder.setMessage("Something important ......");
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                builder.show();
             }
         });
 
