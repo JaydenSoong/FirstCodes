@@ -3,6 +3,8 @@
     <string name="bt1_text">Button 1</string>
     <string name="bt2_text">Button 2</string>
     <string name="bt3_text">Button 3</string>
-    <string name="btn_send">Send</string>
+    <string name="bt4_text">Button 4</string>
+    <string name="bt5_text">Button 5</string>
+    <string name="btn_send">Next</string>
     <string name="hint_text">Write Something here.</string>
 </resources>
