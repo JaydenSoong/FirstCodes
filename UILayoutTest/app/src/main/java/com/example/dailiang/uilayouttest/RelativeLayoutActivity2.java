@@ -21,5 +21,14 @@ public class RelativeLayoutActivity2 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button button1 = (Button) findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RelativeLayoutActivity2.this, PercentLayoutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
