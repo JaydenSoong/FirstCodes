@@ -7,4 +7,5 @@
     <string name="bt5_text">Button 5</string>
     <string name="btn_send">Next</string>
     <string name="hint_text">Write Something here.</string>
+    <string name="text_view">This is TextView</string>
 </resources>
